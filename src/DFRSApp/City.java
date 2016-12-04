@@ -6,7 +6,7 @@ public enum City implements Serializable  {
 	
     MONTREAL("Montreal", "MTL"),
     WASHINGTON("Washington", "WDC"),
-    NEW_DELHI("New Delhi", "ND");
+    NEW_DELHI("NewDelhi", "ND");
 
     private String cityName;
 

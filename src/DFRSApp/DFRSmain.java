@@ -20,7 +20,7 @@ public class DFRSmain {
     private SystemUser user;
 
     public static void main(String args[])
-            throws InterruptedException {
+            throws InterruptedException, FileNotFoundException {
 
         // Delay, in milliseconds before
         // we interrupt MessageLoop
@@ -102,13 +102,8 @@ public class DFRSmain {
         //proxy.bookFlight(cWDC,"second","second","addr2","450",City.MONTREAL,"10/10",SeatType.ECONOMY);
 //proxy.transferReservation(cMTL,flightid,"MONTREAL","WASHINGTON");
         Scanner sd=null;
-		try {
-			//sd = new Scanner(System.in);
-			sd = new Scanner(file);
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		sd = new Scanner(System.in);
+		//sd = new Scanner(file);
         do {
             System.out.println("1.AddFlight");
             System.out.println("2.BookFlight");
@@ -246,7 +241,7 @@ public class DFRSmain {
                     break;
             }
         } while (!exit
-        		&& sd.hasNext()
+        		//&& sd.hasNext()
         		);
     }
 

@@ -316,7 +316,7 @@ public class DFRSServer extends DFRSPOA implements Runnable {
 	}
 
 	private Passenger searchForPassenger(String recordId) {
-		for (List<Passenger> passengers : database.values()) {
+		for (CopyOnWriteArrayList<Passenger> passengers : database.values()) {
 			for (Passenger passsenger : passengers) {
 				if (passsenger.getRecordId().equalsIgnoreCase(recordId)) {
 					return passsenger;
@@ -329,7 +329,7 @@ public class DFRSServer extends DFRSPOA implements Runnable {
 	}
 
 	private synchronized void removePassenger(String recordId) {
-		for (List<Passenger> passengers : database.values()) {
+		for (CopyOnWriteArrayList<Passenger> passengers : database.values()) {
 			for (Passenger passsenger : passengers) {
 				if (passsenger.getRecordId().equalsIgnoreCase(recordId)) {
 					passengers.remove(passsenger);
